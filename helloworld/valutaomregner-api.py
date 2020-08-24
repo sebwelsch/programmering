@@ -4,7 +4,6 @@ import requests
 rates = 'https://api.exchangeratesapi.io/latest'
 
 currency = requests.get(rates)
-
 print(currency.text)
 
 fromCurrency = input('Hvilken valuta ønsker du at konvertere fra? ')
