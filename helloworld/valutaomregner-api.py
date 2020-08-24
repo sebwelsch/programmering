@@ -1,14 +1,20 @@
 import json
 import requests
 
-rates = requests.get('https://api.exchangeratesapi.io/latest')
+rates = 'https://api.exchangeratesapi.io/latest'
 
-print(rates.text)
+currency = requests.get(rates)
 
-rateOne = input('Hvilken valuta ønsker du at konvertere fra? ')
-if rateOne in rates.keys():
+print(currency.text)
 
-    rateTwo = input('Hvilken valuta ønsker du at konvertere til? ')
-    if rateTwo in rates.keys():
+fromCurrency = input('Hvilken valuta ønsker du at konvertere fra? ')
+if fromCurrency in currency.text():
+
+    baseCurrency = {'base':fromCurrency}
+
+    baseRate = requests.get(rates, params=baseCurrency)
+
+    toCurrency = input('Hvilken valuta ønsker du at konvertere til? ')
+    if toCurrency in currency.text():
             amount = int(input('Beløb '))
-            print('Omregnet ' + rateOne +  ' ' + str(amount) + ' til ' + rateTwo + ' ' + str(amount * rates[rateTwo]))
+            print('Omregnet ' + fromCurrency +  ' ' + str(amount) + ' til ' + toCurrency + ' ' + str(amount * fromCurrency[toCurrency]))
