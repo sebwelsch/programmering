@@ -9,3 +9,6 @@ if currencyOne in currency.keys():
     if currencyTwo in currency.keys():
             amount = int(input('Beløb '))
             print('Omregnet ' + currencyOne +  ' ' + str(amount) + ' til ' + currencyTwo + ' ' + str(amount * currency[currencyTwo]))
+
+else:
+    print('Ikke gyldig valuta')
