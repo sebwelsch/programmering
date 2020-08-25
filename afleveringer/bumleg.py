@@ -4,4 +4,3 @@ for i in range(1, 51):
 bumtal = 3
 
 def checkForBum(tal, bumtal):
-    
