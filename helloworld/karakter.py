@@ -14,3 +14,11 @@ def udskrivAlleKarakterer(k):
         udskrivEnKarakter(fag, k)
 
 udskrivAlleKarakterer(karakter)
+
+def beregnSnit(k):
+    total = 0
+    for karakter in k.values():
+        total = total + karakter
+    print('Gennemsnit af karakterer i {} fag: {}'.format(len(k), round(total/len(k), 2)))
+
+beregnSnit(karakter)
