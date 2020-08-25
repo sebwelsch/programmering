@@ -1,3 +1,4 @@
+import json
 import requests
 
 rates = 'https://api.exchangeratesapi.io/latest'
