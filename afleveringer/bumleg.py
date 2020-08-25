@@ -1,6 +1,12 @@
-for i in range(1, 51):
-    print(i)
+def checkForBum(tal, bumtal):
+    if tal % bumtal == 0:
+        print(str(tal) + ' True')
+    elif str(bumtal) in str(tal):
+        print(str(tal) + ' True')
+    else:
+        print(str(tal) + ' False')
 
 bumtal = 3
 
-def checkForBum(tal, bumtal):
+for tal in range(1, 51):
+    checkForBum(tal, bumtal)
