@@ -8,3 +8,9 @@ def udskrivEnKarakter(fag, bog):
 
 udskrivEnKarakter('Programmering', karakter)
 udskrivEnKarakter('Matematik', karakter)
+
+def udskrivAlleKarakterer(k):
+    for fag in k.keys():
+        udskrivEnKarakter(fag, k)
+
+udskrivAlleKarakterer(karakter)
