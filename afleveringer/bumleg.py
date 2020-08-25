@@ -6,7 +6,7 @@ def checkForBum(tal, bumtal):
     else:
         print(str(tal) + ' False')
 
-bumtal = 3
+bumtal = int(input('Vælg et bumtal '))
 
 for tal in range(1, 51):
     checkForBum(tal, bumtal)
