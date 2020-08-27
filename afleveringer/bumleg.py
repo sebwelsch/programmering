@@ -18,14 +18,9 @@ while x:
     gamemodeOne = input('Vil du selv spille?(Ja/Nej) ')
     if gamemodeOne == 'Ja':
 
-        gamemodeTwo = input('Hvor mange spillere?(1/2) ')
-        if gamemodeTwo == '1':
-            x = False
-            print(1)
-        elif gamemodeTwo == '2':
             x = False
             playerOne = True
-            playerTwo = True
+            playerTwo = False
 
             howManyBumtal = int(input('Hvor mange bumtal skal være i spillet? '))
 
@@ -40,8 +35,11 @@ while x:
                     print('Forkert! Spiller 2 vandt')
                     break
 
-        else:
-            tryAgain()
+            while playerTwo:
+                guess = input('Spiller 2: ')
+                if guess != checkForBum(number, bumtal):
+                    print('Forkert! Spiller 1 vandt')
+                    break
 
     elif gamemodeOne == 'Nej':
 
