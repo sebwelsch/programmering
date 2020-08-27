@@ -5,13 +5,10 @@ def tryAgain():
 
 def checkForBum(number, bumtal):
     if number % bumtal == 0:
-        print('BUM!')
         return True
     elif str(bumtal) in str(number):
-        print('BUM!')
         return True
     else:
-        print(str(number))
         return False
 
 while x:
@@ -52,7 +49,12 @@ while x:
         rangeNumber = int(input('Til og med hvilket tal skal computeren spille til? '))
 
         for number in range(1, rangeNumber + 1):
-            checkForBum(number, bumtal)
+            if checkForBum(number, bumtal) == True:
+                print('BUM!')
+            elif checkForBum(number, bumtal) == False:
+                print(str(number))
+            else:
+                tryAgain()
 
     else:
         tryAgain()
