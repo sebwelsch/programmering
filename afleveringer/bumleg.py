@@ -3,15 +3,15 @@ x = True
 def tryAgain():
     print('Fejl, prøv igen')
 
-def checkForBum(tal, bumtal):
-    if tal % bumtal == 0:
+def checkForBum(number, bumtal):
+    if number % bumtal == 0:
         print('BUM!')
         return True
-    elif str(bumtal) in str(tal):
+    elif str(bumtal) in str(number):
         print('BUM!')
         return True
     else:
-        print(str(tal))
+        print(str(number))
         return False
 
 while x:
@@ -24,11 +24,21 @@ while x:
             print(1)
         elif gamemodeTwo == '2':
             x = False
+            playerOne = True
+            playerTwo = True
+
+            howManyBumtal = int(input('Hvor mange bumtal skal være i spillet? '))
 
             bumtal = int(input('Vælg et bumtal '))
 
-            for tal in range(1, 1000):
-                checkForBum(tal, bumtal)
+            for number in range(1, 51):
+                checkForBum(number, bumtal)
+
+            while playerOne:
+                guess = input('Spiller 1: ')
+                if guess != checkForBum(number, bumtal):
+                    print('Forkert! Spiller 2 vandt')
+                    break
 
         else:
             tryAgain()
@@ -41,9 +51,10 @@ while x:
         print('Computeren spiller nu selv')
 
         bumtal = int(input('Vælg et bumtal '))
+        rangeNumber = int(input('Til og med hvilket tal skal computeren spille til? '))
 
-        for tal in range(1, 51):
-            checkForBum(tal, bumtal)
+        for number in range(1, rangeNumber + 1):
+            checkForBum(number, bumtal)
 
     else:
         tryAgain()
