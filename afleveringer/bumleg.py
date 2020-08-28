@@ -44,7 +44,6 @@ while x:
             print('Rigtigt')
         else:
             print('Forkert! Spiller 2 vandt')
-            x = False
             break
         t = t + 1
         guessTwo = input('Spiller 2: ')
