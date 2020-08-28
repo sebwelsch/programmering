@@ -23,29 +23,28 @@ while x:
             if checkForBum(number, bumtal) == True:
                 number =  str('BUM!')
                 numberList.append(number)
-            elif checkForBum(number, bumtal) == False:
-                numberList.append(number)
             else:
-                tryAgain()
+                numberList.append(number)
 
-            playing = True
-            t = 0
+        playing = True
+        t = 0
 
-            while playing:
-                guess = int(input('Spiller 1: '))
-                if guess == numberList[t]:
-                    print('Rigtigt')
-                else:
-                    print('Forkert! Spiller 2 vandt')
-                    break
-                t = t + 1
-                guessTwo = int(input('Spiller 2: '))
-                if guessTwo == numberList[t]:
-                    print('Rigtigt')
-                else:
-                    print('Forkert! Spiller 1 vandt')
-                    break
-                t = t + 1
+        while playing:
+            guess = input('Spiller 1: ')
+            if guess == str(numberList[t]):
+                print('Rigtigt')
+            else:
+                print('Forkert! Spiller 2 vandt')
+                x = False
+                break
+            t = t + 1
+            guessTwo = input('Spiller 2: ')
+            if guessTwo == str(numberList[t]):
+                print('Rigtigt')
+            else:
+                print('Forkert! Spiller 1 vandt')
+                break
+            t = t + 1
 
     elif gamemodeOne == 'Nej':
 
