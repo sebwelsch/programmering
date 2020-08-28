@@ -9,41 +9,67 @@ def checkForBum(number, bumtal):
     else:
         return False
 
-gamemodeOne = input('Vil du selv spille?(Ja/Nej) ')
-if gamemodeOne == 'Ja':
+x = True
 
-    howManyBumtal = int(input('Hvor mange bumtal skal være i spillet? '))
+while x:
+    gamemodeOne = input('Vil du selv spille?(Ja/Nej) ')
+    if gamemodeOne == 'Ja':
 
-    bumtal = int(input('Vælg et bumtal '))
+        bumtal = int(input('Vælg et bumtal '))
 
-    numberList = []
+        numberList = []
 
-    for number in range(1, 51):
-        if checkForBum(number, bumtal) == True:
-            number =  str('BUM!')
-            numberList.append(number)
-        elif checkForBum(number, bumtal) == False:
-            numberList.append(number)
-        else:
-            tryAgain()
+        for number in range(1, 51):
+            if checkForBum(number, bumtal) == True:
+                number =  str('BUM!')
+                numberList.append(number)
+            elif checkForBum(number, bumtal) == False:
+                numberList.append(number)
+            else:
+                tryAgain()
 
-elif gamemodeOne == 'Nej':
+            playing = True
+            t = 0
 
-    x = False
+            while playing:
+                guess = int(input('Spiller 1: '))
+                if guess == numberList[t]:
+                    print('Rigtigt')
+                else:
+                    print('Forkert! Spiller 2 vandt')
+                    break
+                t = t + 1
+                guessTwo = int(input('Spiller 2: '))
+                if guessTwo == numberList[t]:
+                    print('Rigtigt')
+                else:
+                    print('Forkert! Spiller 1 vandt')
+                    break
+                t = t + 1
 
-    print()
-    print('Computeren spiller nu selv')
+    elif gamemodeOne == 'Nej':
 
-    bumtal = int(input('Vælg et bumtal '))
-    rangeNumber = int(input('Til og med hvilket tal skal computeren spille til? '))
+        x = False
 
-    for number in range(1, rangeNumber + 1):
-        if checkForBum(number, bumtal) == True:
-            print('BUM!')
-        elif checkForBum(number, bumtal) == False:
-            print(str(number))
-        else:
-            tryAgain()
+        print()
+        print('Computeren spiller nu selv')
 
-else:
-    tryAgain()
+        rangeNumber = int(input('Til og med hvilket tal skal computeren spille til? '))
+        bumtal = int(input('Vælg et bumtal '))
+
+        for number in range(1, rangeNumber + 1):
+            if checkForBum(number, bumtal) == True:
+                print('BUM!')
+            elif checkForBum(number, bumtal) == False:
+                print(str(number))
+            else:
+                tryAgain()
+
+    else:
+        tryAgain()
+
+    playAgain = input('Vil du spille igen?(Ja/Nej) ')
+    if playAgain == 'Ja':
+        x = True
+    else:
+        break
