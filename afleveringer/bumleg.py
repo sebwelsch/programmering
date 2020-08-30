@@ -1,6 +1,3 @@
-def tryAgain():
-    print('Fejl, prøv igen')
-
 def checkForBum(number, bumtalList):
     for n in bumtalList:
         if number % n == 0:
